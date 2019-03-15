@@ -1,7 +1,17 @@
 <% @comedians.each do |comedian| %>
 <ul>
+  <img src="<%= comedian.comic_photo %>" alt="">
   <li>Name: <%= comedian.name %></li>
   <li>Age: <%= comedian.age %></li>
   <li>City: <%= comedian.city %></li>
+  <li>TV Specials:
+    <ul>
+      <% comedian.specials.each do|special| %>
+      <img src="<%= special.special_photo%>" alt="">
+      <li><%= special.name %></li>
+      <li>Runtime: <%= special.runtime %> mins</li>
+      <% end %>
+    </ul>
+  </li>
 </ul>
 <% end %>
