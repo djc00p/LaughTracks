@@ -7,4 +7,16 @@ RSpec.describe Special do
       end
     end
   end
+  describe 'Class Methods' do
+    describe '.average_special_runtime' do
+      it 'returns average runtime for specials' do
+        Special.create(name: "whos there", runtime: 80)
+        Special.create(name: "whos there", runtime: 30)
+        Special.create(name: "whos there", runtime: 70)
+        Special.create(name: "whos there", runtime: 60)
+
+        expect(Special.average_special_runtime).to eq(60)
+      end
+    end
+  end
 end
