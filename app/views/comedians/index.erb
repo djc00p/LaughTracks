@@ -1,17 +1,50 @@
-<% @comedians.each do |comedian| %>
-<ul>
-  <img src="<%= comedian.comic_photo %>" alt="">
-  <li>Name: <%= comedian.name %></li>
-  <li>Age: <%= comedian.age %></li>
-  <li>City: <%= comedian.city %></li>
-  <li>TV Specials:
-    <ul>
-      <% comedian.specials.each do|special| %>
-      <img src="<%= special.special_photo%>" alt="">
-      <li><%= special.name %></li>
-      <li>Runtime: <%= special.runtime %> mins</li>
-      <% end %>
-    </ul>
-  </li>
-</ul>
-<% end %>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
+  <title>Comedians</title>
+</head>
+<body>
+  <section class="stats-card">
+    <h1>Statistics</h1>
+    <section>
+      <ul>
+        <li>Average Age of All Comedians: <%= Comedian.average_comedian_age %></li>
+        <li>Average Runtime of All Specials: <%= Special.average_special_runtime %> mins</li>
+        <li>Hometowns: <%=  Comedian.list_of_cities %></li>
+        <li>Total Specials: <%= Special.count %></li>
+      </ul>
+    </section>
+  </section>
+  <section class="comedians">
+    <% @comedians.each do |comedian| %>
+    <section class="container_2">
+      <section class="comic_info">
+        <img src="<%= comedian.comic_photo %>" alt="">
+        <ul>
+          <li>Name: <%= comedian.name %></li>
+          <li>Age: <%= comedian.age %></li>
+          <li>City: <%= comedian.city %></li>
+          <li>Total Specials: <%= comedian.specials.count %></li>
+        </ul>
+      </section>
+      <section class="tv_specials">
+        <h2>TV Specials</h2>
+        <ul>
+          <% comedian.specials.each do|special| %>
+          <section>
+            <span>
+              <img src="<%= special.special_photo%>" alt="">
+              <li><%= special.name %></li>
+              <li>Runtime: <%= special.runtime %> mins</li>
+            </span>
+            <% end %>
+          </section>
+        </ul>
+      </section>
+    </section>
+    <% end %>
+  </section>
+</body>
+</html>
