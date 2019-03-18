@@ -1,1 +1,43 @@
+body {
+  background-color: rgb(122, 10, 10);
+}
+img {
+  max-width: 100%;
+}
 
+ul {
+  padding-left: 0px;
+}
+li {
+  list-style-type: none;
+}
+.tv_specials img {
+  margin: 10px 0px;
+}
+
+.comedians {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 20px;
+  align-items: stretch;
+}
+
+.stats-card {
+  margin: 5px;
+  padding: 5px;
+  text-align: center;
+  border: 3px solid black;
+  border-radius: 3px;
+  background-color: gray
+}
+.container_2 {
+  text-align: center;
+  border: 3px solid black;
+  border-radius: 3px;
+  background-color: gray
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
